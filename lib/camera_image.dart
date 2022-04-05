@@ -14,16 +14,16 @@ class Plane {
   final int bytesPerRow;
   final int? height;
   final int? width;
-  
+
   Plane._fromPlatformData(Map<dynamic, dynamic> data)
       : bytes = data['bytes'],
         bytesPerPixel = data['bytesPerPixel'],
         bytesPerRow = data['bytesPerRow'],
         height = data['height'],
         width = data['width'];
-
 }
 
+// ignore: todo
 // TODO:Turn [ImageFormatGroup] to a class with int values.
 
 enum ImageFormatGroup {
@@ -94,9 +94,9 @@ class CameraImage {
   final List<Plane> planes;
 
   CameraImage._fromPlatformData(Map<dynamic, dynamic> data)
-    : format = ImageFormat._fromPlatformData(data['format']),
-      height = data['height'],
-      width = data['width'],
-      planes = List<Plane>.unmodifiable(data['planes'].map((dynamic planeData) => Plane._fromPlatformData(planeData)));
-
+      : format = ImageFormat._fromPlatformData(data['format']),
+        height = data['height'],
+        width = data['width'],
+        planes = List<Plane>.unmodifiable(data['planes']
+            .map((dynamic planeData) => Plane._fromPlatformData(planeData)));
 }

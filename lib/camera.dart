@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 
 part 'camera_image.dart';
 
-final MethodChannel _channel = const MethodChannel('rtmp_camera');
+const MethodChannel _channel = MethodChannel('rtmp_camera');
 
 enum CameraLensDirection { front, back, external }
 
@@ -350,6 +350,7 @@ class CameraController extends ValueNotifier<CameraValue> {
     }
   }
 
+  // ignore: todo
   // TODO: Add settings for resolution and fps.
   Future<void> startImageStream(onLatestImageAvailable onAvailable) async {
     if (!value.isInitialized || _isDisposed!) {
