@@ -262,15 +262,16 @@ class CameraValue {
 /// To show the camera preview on the screen use a [CameraPreview] widget.
 class CameraController extends ValueNotifier<CameraValue> {
   /// Creates a new camera controller in an uninitialized state.
-  CameraController(this.description, this.resolutionPreset,
-      {this.enableAudio = true,
-      this.imageFormatGroup,
-      this.androidUseOpenGL = false,
-      this.streamingPreset,
-      this.textureId})
-      : super(const CameraValue.uninitialized());
+  CameraController(
+    this.description,
+    this.resolutionPreset, {
+    this.enableAudio = true,
+    this.imageFormatGroup,
+    this.androidUseOpenGL = false,
+    this.streamingPreset,
+  }) : super(const CameraValue.uninitialized());
 
-  int? textureId;
+  int? _textureId;
   final bool? androidUseOpenGL;
   final ResolutionPreset? streamingPreset;
 
@@ -366,7 +367,7 @@ class CameraController extends ValueNotifier<CameraValue> {
           'enableAndroidOpenGL': androidUseOpenGL ?? false
         },
       );
-      textureId = reply!['textureId'];
+      _textureId = reply!['_textureId'];
 
       _deviceOrientationSubscription = CameraPlatform.instance
           .onDeviceOrientationChanged()
@@ -413,7 +414,7 @@ class CameraController extends ValueNotifier<CameraValue> {
     } on PlatformException catch (e) {
       throw CameraException(e.code, e.message);
     }
-    _eventSubscription = EventChannel('video_stream/cameraEvents$textureId')
+    _eventSubscription = EventChannel('video_stream/cameraEvents$_textureId')
         .receiveBroadcastStream()
         .listen(_listener);
     _initCalled = true;
@@ -716,7 +717,7 @@ class CameraController extends ValueNotifier<CameraValue> {
     try {
       await _channel
           .invokeMethod<void>('startVideoStreaming', <String, dynamic>{
-        'textureId': textureId,
+        '_textureId': _textureId,
         'url': url,
         'bitrate': bitrate,
       });
@@ -747,7 +748,7 @@ class CameraController extends ValueNotifier<CameraValue> {
       debugPrint("Stop video streaming call");
       await _channel.invokeMethod<void>(
         'stopRecordingOrStreaming',
-        <String, dynamic>{'textureId': textureId},
+        <String, dynamic>{'_textureId': _textureId},
       );
     } on PlatformException catch (e) {
       debugPrint("GOt exception " + e.toString());
@@ -772,7 +773,7 @@ class CameraController extends ValueNotifier<CameraValue> {
       value = value.copyWith(isStreamingPaused: false);
       await _channel.invokeMethod<void>(
         'resumeVideoStreaming',
-        <String, dynamic>{'textureId': textureId},
+        <String, dynamic>{'_textureId': _textureId},
       );
     } on PlatformException catch (e) {
       throw CameraException(e.code, e.message!);
@@ -793,7 +794,7 @@ class CameraController extends ValueNotifier<CameraValue> {
             isRecordingVideo: false, isStreamingVideoRtmp: false);
         await _channel.invokeMethod<void>(
           'stopRecordingOrStreaming',
-          <String, dynamic>{'textureId': textureId},
+          <String, dynamic>{'_textureId': _textureId},
         );
       }
       if (value.isStreamingImages) {
@@ -1045,7 +1046,7 @@ class CameraController extends ValueNotifier<CameraValue> {
       await CameraPlatform.instance.dispose(_cameraId);
       await _channel.invokeMethod<void>(
         'dispose',
-        <String, dynamic>{'textureId': textureId},
+        <String, dynamic>{'_textureId': _textureId},
       );
       await _eventSubscription!.cancel();
     }
