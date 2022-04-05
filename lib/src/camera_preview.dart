@@ -51,14 +51,7 @@ class CameraPreview extends StatelessWidget {
 
     return RotatedBox(
       quarterTurns: _getQuarterTurns(),
-      child: Stack(
-        children: [
-          child,
-          Texture(
-            textureId: controller.textureId!,
-          )
-        ],
-      ),
+      child: child,
     );
   }
 
