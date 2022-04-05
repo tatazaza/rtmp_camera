@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint video_stream.podspec` to validate before publishing.
+# Run `pod lib lint rtmp_camera.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'video_stream'
+  s.name             = 'rtmp_camera'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter package to stream video to RTMP server.'
   s.description      = <<-DESC

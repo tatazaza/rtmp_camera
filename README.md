@@ -1,4 +1,4 @@
-# video_stream
+# rtmp_camera
 
 A new Flutter package for basic live streaming video to RTMP server.
 

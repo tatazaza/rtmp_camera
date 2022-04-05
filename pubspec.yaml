@@ -1,4 +1,4 @@
-name: video_stream
+name: rtmp_camera
 description: A new Flutter package to live stream video to RTMP server.
 version: 0.0.1
 homepage: https://github.com/tatazaza/rtmp_camera

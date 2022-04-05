@@ -1,5 +1,5 @@
-name: video_stream_example
-description: Demonstrates how to use the video_stream plugin.
+name: rtmp_camera_example
+description: Demonstrates how to use the rtmp_camera plugin.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  video_stream:
+  rtmp_camera:
     path: ../
 
   cupertino_icons: ^1.0.3

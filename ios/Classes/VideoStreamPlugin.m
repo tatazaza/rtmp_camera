@@ -1,11 +1,11 @@
 #import "VideoStreamPlugin.h"
-#if __has_include(<video_stream/video_stream-Swift.h>)
-#import <video_stream/video_stream-Swift.h>
+#if __has_include(<rtmp_camera/rtmp_camera-Swift.h>)
+#import <rtmp_camera/rtmp_camera-Swift.h>
 #else
 // Support project import fallback if the generated compatibility header
 // is not copied when this plugin is created as a library.
 // https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
-#import "video_stream-Swift.h"
+#import "rtmp_camera-Swift.h"
 #endif
 
 #import <AVFoundation/AVFoundation.h>
@@ -697,7 +697,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 - (void)startImageStreamWithMessenger:(NSObject<FlutterBinaryMessenger> *)messenger {
     if (!_isStreamingImages) {
         FlutterEventChannel *eventChannel =
-        [FlutterEventChannel eventChannelWithName:@"video_stream/camera/imageStream"
+        [FlutterEventChannel eventChannelWithName:@"rtmp_camera/camera/imageStream"
                                   binaryMessenger:messenger];
         
         _imageStreamHandler = [[FLTImageStreamHandler alloc] init];
@@ -846,7 +846,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 }
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
     FlutterMethodChannel *channel =
-    [FlutterMethodChannel methodChannelWithName:@"video_stream"
+    [FlutterMethodChannel methodChannelWithName:@"rtmp_camera"
                                 binaryMessenger:[registrar messenger]];
     VideoStreamPlugin *instance = [[VideoStreamPlugin alloc] initWithRegistry:[registrar textures]
                                                                         messenger:[registrar messenger]];
@@ -926,7 +926,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                 [_registry textureFrameAvailable:textureId];
             };
             FlutterEventChannel *eventChannel = [FlutterEventChannel
-                                                 eventChannelWithName:[NSString stringWithFormat:@"video_stream/cameraEvents%lld",textureId]
+                                                 eventChannelWithName:[NSString stringWithFormat:@"rtmp_camera/cameraEvents%lld",textureId]
                                                  binaryMessenger:_messenger];
             
             [eventChannel setStreamHandler:cam];

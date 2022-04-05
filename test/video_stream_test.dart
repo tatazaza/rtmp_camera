@@ -2,7 +2,7 @@
 // import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  // const MethodChannel channel = MethodChannel('video_stream');
+  // const MethodChannel channel = MethodChannel('rtmp_camera');
 
   // TestWidgetsFlutterBinding.ensureInitialized();
 

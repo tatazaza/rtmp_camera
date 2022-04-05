@@ -165,8 +165,8 @@ internal class MethodCallHandlerImpl(
     }
 
     init {
-        methodChannel = MethodChannel(messenger, "video_stream")
-        imageStreamChannel = EventChannel(messenger, "video_stream/imageStream")
+        methodChannel = MethodChannel(messenger, "rtmp_camera")
+        imageStreamChannel = EventChannel(messenger, "rtmp_camera/imageStream")
         methodChannel.setMethodCallHandler(this)
     }
 }

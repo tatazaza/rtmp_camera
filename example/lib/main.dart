@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:video_stream/camera.dart';
+import 'package:rtmp_camera/camera.dart';
 import 'package:wakelock/wakelock.dart';
 
 class CameraExampleHome extends StatefulWidget {

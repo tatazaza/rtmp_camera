@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>video_stream</name>
-	<comment>Project video_stream created by Buildship.</comment>
+	<name>rtmp_camera</name>
+	<comment>Project rtmp_camera created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>

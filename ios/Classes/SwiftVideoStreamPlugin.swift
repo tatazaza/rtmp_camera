@@ -227,7 +227,7 @@ class MyRTMPStreamQoSDelagate: RTMPStreamDelegate {
 
 //public class SwiftVideoStreamPlugin: NSObject, FlutterPlugin {
 //  public static func register(with registrar: FlutterPluginRegistrar) {
-//    let channel = FlutterMethodChannel(name: "video_stream", binaryMessenger: registrar.messenger())
+//    let channel = FlutterMethodChannel(name: "rtmp_camera", binaryMessenger: registrar.messenger())
 //    let instance = SwiftVideoStreamPlugin()
 //    registrar.addMethodCallDelegate(instance, channel: channel)
 //  }

@@ -1,6 +1,6 @@
-# video_stream_example
+# rtmp_camera_example
 
-Demonstrates how to use the video_stream plugin.
+Demonstrates how to use the rtmp_camera plugin.
 
 ## Getting Started
 
