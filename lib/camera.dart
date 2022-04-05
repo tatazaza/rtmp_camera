@@ -304,7 +304,7 @@ class CameraController extends ValueNotifier<CameraValue> {
     } on PlatformException catch (e) {
       throw CameraException(e.code, e.message!);
     }
-    _eventSubscription = EventChannel('video_stream/cameraEvents$_textureId')
+    _eventSubscription = EventChannel('rtmp_camera/cameraEvents$_textureId')
         .receiveBroadcastStream()
         .listen(_listener);
     _creatingCompleter!.complete();
@@ -382,7 +382,7 @@ class CameraController extends ValueNotifier<CameraValue> {
       throw CameraException(e.code, e.message!);
     }
     const EventChannel cameraEventChannel =
-        EventChannel('video_stream/imageStream');
+        EventChannel('rtmp_camera/imageStream');
     _imageStreamSubscription =
         cameraEventChannel.receiveBroadcastStream().listen(
       (dynamic imageData) {
