@@ -1,4 +1,4 @@
-package com.marshalltechnology.video_stream
+package com.example.rtmp_camera
 
 
 import android.app.Activity
@@ -13,7 +13,7 @@ import android.media.CamcorderProfile
 import android.os.Build
 import android.util.Size
 import androidx.annotation.RequiresApi
-import com.marshalltechnology.video_stream.Camera.ResolutionPreset
+import com.example.rtmp_camera.Camera.ResolutionPreset
 import java.util.*
 
 

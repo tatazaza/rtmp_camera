@@ -864,7 +864,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 - (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result {
     if (_dispatchQueue == nil) {
-        _dispatchQueue = dispatch_queue_create("com.marshalltechnology.video_stream.dispatchqueue", NULL);
+        _dispatchQueue = dispatch_queue_create("com.example.rtmp_camera.dispatchqueue", NULL);
     }
     
     // Invoke the plugin on another dispatch queue to avoid blocking the UI.

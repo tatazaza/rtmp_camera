@@ -1,4 +1,4 @@
-package com.marshalltechnology.video_stream
+package com.example.rtmp_camera
 
 import android.Manifest.permission
 import android.app.Activity

@@ -1,11 +1,11 @@
-package com.marshalltechnology.video_stream
+package com.example.rtmp_camera
 
 import android.app.Activity
 import android.hardware.camera2.CameraAccessException
 import android.os.Build
 import io.flutter.Log
 import androidx.annotation.RequiresApi
-import com.marshalltechnology.video_stream.CameraPermissions.ResultCallback
+import com.example.rtmp_camera.CameraPermissions.ResultCallback
 import io.flutter.plugin.common.*
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.view.TextureRegistry

@@ -1,4 +1,4 @@
-package com.marshalltechnology.video_stream_example
+package com.example.rtmp_camera_example
 
 import io.flutter.embedding.android.FlutterActivity
 

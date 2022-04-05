@@ -1,4 +1,5 @@
-package com.marshalltechnology.video_stream
+package com.example.rtmp_camera
+
 
 import android.annotation.SuppressLint
 import android.app.Activity

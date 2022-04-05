@@ -212,7 +212,9 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
                         )
                       : ElevatedButton(
                           onPressed: () => onVideoStreamingButtonPressed(),
-                          style: ButtonStyle( backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.blue)),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
