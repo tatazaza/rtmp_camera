@@ -325,7 +325,6 @@ class CameraController extends ValueNotifier<CameraValue> {
       return;
     }
 
-    print("Event $map");
     switch (map['eventType']) {
       case 'error':
         value = value.copyWith(errorDescription: event['errorDescription']);

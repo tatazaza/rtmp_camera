@@ -545,7 +545,7 @@ class Camera(
                 // Send a message with the new orientation to the ux.
                 dartMessenger.send(DartMessenger.EventType.ROTATION_UPDATE, (currentOrientation / 90).toString())
 
-                Log.i(TAG, "Updated Orientation (sent) " + currentOrientation + " -- " + (currentOrientation / 90).toString())
+                // Log.i(TAG, "Updated Orientation (sent) " + currentOrientation + " -- " + (currentOrientation / 90).toString())
             }
         }
         orientationEventListener.enable()
